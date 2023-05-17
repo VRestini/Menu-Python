@@ -69,13 +69,3 @@ def busca_vetor(vetor1: list, n1: int) ->list:
         else:
             return False
 
-print(busca_vetor(v1, 3))
-print(maior_elemento(v1))
-conta_acima_media(v1)
-
-"""lista1 = [3, 41, 72, 39, 4, 35]"""
-"""ordena_vetor(v1, 'c')
-copia_vetor(v1, v2)
-inverte_vetor(v1, v2)
-ordena_vetor_crescente(v1)
-ordena_vetor_decrescente(v1)"""
