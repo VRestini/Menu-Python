@@ -23,7 +23,7 @@ acima da média.
 em v, senão retorne False.
 """
 
-v1 = [41, 72, 39, 4, 35]
+v1 = [ 41, 72, 39, 4, 35]
 v2 = [0, 0, 0, 0, 0]
 def copia_vetor(vetor1, vetor2: list) -> list:
     v2 = v1
@@ -37,8 +37,45 @@ def ordena_vetor_crescente(vetor1: list) -> list:
 
 def ordena_vetor_decrescente(vetor1: list) -> list:
     print(sorted(vetor1, reverse = True))
+def ordena_vetor(vetor1: list, forma : str) -> None:
+    while forma not in ['c', 'C', 'd', 'D']:
+        print("Erro!")
+        forma = input("Digite novamente: ")
+    if forma in ['c', 'C']:
+        print(sorted(vetor1))
+    else:
+        print(sorted(vetor1, reverse=True))
 
+def conta_acima_media(vetor1: list) -> list:
+    soma = 0
+    for i in vetor1:
+        soma = soma + i
+    media = soma / len(vetor1)
+    for i in range(len(vetor1)):
+        if vetor1[i] > media:
+            print(vetor1[i])
+
+def maior_elemento(vetor1: list) -> int:
+    aux = vetor1[0]
+    for i in range(len(vetor1)):
+        if vetor1[i] > aux:
+            aux = vetor1[i]
+    return(aux)
+
+def busca_vetor(vetor1: list, n1: int) ->list:
+    for i in range(len(vetor1)):
+        if n1 == vetor1[i]:
+            return True
+        else:
+            return False
+
+print(busca_vetor(v1, 3))
+print(maior_elemento(v1))
+conta_acima_media(v1)
+
+"""lista1 = [3, 41, 72, 39, 4, 35]"""
+"""ordena_vetor(v1, 'c')
 copia_vetor(v1, v2)
 inverte_vetor(v1, v2)
 ordena_vetor_crescente(v1)
-ordena_vetor_decrescente(v1)
+ordena_vetor_decrescente(v1)"""
