@@ -25,26 +25,64 @@ em v, senão retorne False.
 
 v1 = [ 41, 72, 39, 4, 35]
 v2 = [0, 0, 0, 0, 0]
+def separa_vetor(vetor1: list) -> None:
+    for i in range(0, len(vetor1)):
+        if vetor1[i] % 2 == 0:
+            for a in range(i, len(vetor1)):
+                if vetor1[a] % 2 == 1:
+                    aux = vetor1[i]
+                    vetor1[i] = vetor1[a]
+                    vetor1[a] = aux
+    print(vetor1)
+
+separa_vetor(v1)
+
+
 def copia_vetor(vetor1, vetor2: list) -> list:
     v2 = v1
     print (v2)
 def inverte_vetor(vetor1, vetor2: list) -> list:
-    v2 = v1
-    exi = list(reversed(v2))
-    print(exi)
+    a = -1
+    for i in range(len(vetor2)):
+        vetor2[i] = vetor1[a]
+        a = a - 1
+    print(vetor2)
+
 def ordena_vetor_crescente(vetor1: list) -> list:
-    print(sorted(vetor1))
+    aux = vetor1[0]
+    for i in range(len(vetor1)):
+        if vetor1[i] > aux:
+            aux = vetor1[i]
+    return aux
+
 
 def ordena_vetor_decrescente(vetor1: list) -> list:
-    print(sorted(vetor1, reverse = True))
+    aux = vetor1[0]
+    for i in range(len(vetor1)):
+        if vetor1[i] < aux:
+            aux = vetor1[i]
+    return aux
+
+
 def ordena_vetor(vetor1: list, forma : str) -> None:
     while forma not in ['c', 'C', 'd', 'D']:
         print("Erro!")
         forma = input("Digite novamente: ")
     if forma in ['c', 'C']:
-        print(sorted(vetor1))
+        aux = vetor1[0]
+        for i in range(len(vetor1)):
+            if vetor1[i] > aux:
+                aux = vetor1[i]
+        return aux
+
     else:
-        print(sorted(vetor1, reverse=True))
+        aux = vetor1[0]
+        for i in range(len(vetor1)):
+            if vetor1[i] < aux:
+                aux = vetor1[i]
+        return aux
+
+
 
 def conta_acima_media(vetor1: list) -> list:
     soma = 0

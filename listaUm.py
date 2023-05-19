@@ -1,7 +1,11 @@
 v = [34, 6, 57, 3, 45, -10, 5]
 
 def ordenar(vetor: list) -> list:
-    return print(sorted(vetor))
+    aux = vetor[0]
+    for i in range(len(vetor)):
+        if vetor[i] > aux:
+            aux = vetor[i]
+    print(aux)
 
 
 def exista(vetor: list, n1: int) -> bool:

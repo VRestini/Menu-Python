@@ -70,6 +70,7 @@ while resp == 's' or resp == 'S':
                     ordena_vetor_decrescente(v)
                 elif esc == 6:
                     print("Organiza de forma solicitada os elementos do vetor v = [34, 6, 57, 3, 45, -10, 5]:")
+
                 elif esc == 7:
                     print("retorna quais elementos estam acima da media do vetor v = [34, 6, 57, 3, 45, -10, 5]:")
                     conta_acima_media(v)
