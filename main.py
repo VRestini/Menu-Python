@@ -1,10 +1,13 @@
 from listaUm import *
 from listaDois import *
 
+v1 = [ 41, 72, 39, 4, 35]
+v = [34, 6, 57, 3, 45, -10, 5]
 resp = 's'
 while resp == 's' or resp == 'S':
     print("----- MENU -----")
     print("\n NÍVEL 1: \n 1- Primeiro elemento \n 2- Negativo \n 3- Soma \n 4- Média \n 5- Média \n 6- Pri e ult \n 7- Índice par \n 8- Ordenar \n 9- Exista")
+    print("\n NÍVEL 2: \n 1- Copia o vetor \n 2- Inverte o vetor \n 3- Crescente \n 4- Decrescente \n 5- Ordem solicitada \n 6- Separa o vetor \n 7- Acima da média \n 8- Maior elemento \n 9- Busca vetor")
     nivel = int(input("Escolha o nível:"))
     while nivel != 1 and nivel != 2:
         print("Erro!")
@@ -39,10 +42,10 @@ while resp == 's' or resp == 'S':
                     indice_par_elem(v)
                 elif esc == 8:
                     print("Mostrará os elemento ordenados do vetor v = [34, 6, 57, 3, 45, -10, 5]:")
-                    print(ordenar(v))
+                    ordenar(v)
                 else:
                     print("Mostrará seo número passado como parâmetro existe no vetor v = [34, 6, 57, 3, 45, -10, 5]:")
-                    n1 = input("Digite o valor aser passado como parametro: ")
+                    n1 = int(input("Digite o valor aser passado como parametro: "))
                     print(exista(v, n1))
                 resp = input("Deseja continuar:")
                 while resp != 'S' and resp != 's' and resp != 'n' and resp != 'N':
@@ -55,32 +58,37 @@ while resp == 's' or resp == 'S':
                 esc = int(input("Escolha o exercício:"))
             else:
                 if esc == 1:
-                    print("Copia os elementos dos vetores v1 = [41, 72, 39, 4, 35] e v2 = [35, 4, 39, 72, 41]:")
+                    print("Copia os elementos dos vetores v1 = [41, 72, 39, 4, 35]:")
                     copia_vetor(v1,v2)
                 elif esc == 2:
-                    print("copia os elementos invertidos nos vetores v1 = [41, 72, 39, 4, 35] e v2 = [35, 4, 39, 72, 41]:")
+                    print("copia os elementos invertidos nos vetores v1 = [41, 72, 39, 4, 35]:")
                     inverte_vetor(v1, v2)
                 elif esc == 3:
-                    print("Ordena em ordem crescente os elementos do vetor v = [34, 6, 57, 3, 45, -10, 5]:")
-                    ordena_vetor_crescente(v)
+                    print("Ordena em ordem crescente os elementos do vetor v1 = [41, 72, 39, 4, 35]:")
+                    ordena_vetor_crescente(v1)
                 elif esc == 4:
-                    print("Ordena em ordem decrescente os elementos do vetor v = [34, 6, 57, 3, 45, -10, 5]:")
+                    print("Ordena em ordem decrescente os elementos do vetor v1 = [41, 72, 39, 4, 35]:")
+                    print(ordena_vetor_decrescente(v1))
                 elif esc == 5:
-                    print("Mostrará os valores ímpares do vetor v = [34, 6, 57, 3, 45, -10, 5]:")
-                    ordena_vetor_decrescente(v)
+                    print("Mostrará os valores em ordem do vetor v1 = [41, 72, 39, 4, 35]:")
+                    n1 = input("Digite a ordem:")
+                    while n1 not in ['c', 'C', 'd', 'D']:
+                        print("Erro!")
+                        n1 = input("Digite novamente: ")
+                    print(ordena_vetor(v1, n1))
                 elif esc == 6:
-                    print("Organiza de forma solicitada os elementos do vetor v = [34, 6, 57, 3, 45, -10, 5]:")
-
+                    print("Organiza os ímpares na esquerda e os pares na direita do vetor v1 = [41, 72, 39, 4, 35]:")
+                    separa_vetor(v1)
                 elif esc == 7:
-                    print("retorna quais elementos estam acima da media do vetor v = [34, 6, 57, 3, 45, -10, 5]:")
-                    conta_acima_media(v)
+                    print("retorna quais elementos estam acima da media do vetor v1 = [41, 72, 39, 4, 35]:")
+                    conta_acima_media(v1)
                 elif esc == 8:
-                    print("mostra o  maior elemento do vetor v = [34, 6, 57, 3, 45, -10, 5]:")
-                    print(maior_elemento(v))
+                    print("mostra o  maior elemento do vetor v1 = [41, 72, 39, 4, 35]:")
+                    print(maior_elemento(v1))
                 else:
-                    print("Mostrará seo número passado como parâmetro existe no vetor v = [34, 6, 57, 3, 45, -10, 5]:")
-                    n1 = input("Digite o valor a ser passado como parametro: ")
-                    print(busca_vetor(v, n1))
+                    print("Mostrará seo número passado como parâmetro existe no vetor v1 = [41, 72, 39, 4, 35]:")
+                    n1 = int(input("Digite o valor a ser passado como parametro: "))
+                    print(busca_vetor(v1, n1))
                 resp = input("Deseja continuar:")
                 while resp != 'S' and resp != 's' and resp != 'n' and resp != 'N':
                     print("Erro!")

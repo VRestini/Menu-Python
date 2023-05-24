@@ -1,19 +1,23 @@
 v = [34, 6, 57, 3, 45, -10, 5]
 
 def ordenar(vetor: list) -> list:
-    aux = vetor[0]
+    aux = 0
     for i in range(len(vetor)):
-        if vetor[i] > aux:
-            aux = vetor[i]
-    print(aux)
+        for a in range(len(vetor)):
+            if vetor[i] < vetor[a]:
+                aux = vetor[i]
+                vetor[i] = vetor[a]
+                vetor[a] = aux
+    for i in range(len(vetor)):
+        print(vetor[i])
 
 
 def exista(vetor: list, n1: int) -> bool:
     for i in range(len(vetor)):
         if n1 == v[i]:
             return True
-        else:
-            return False
+    if n1 != v[i]:
+        return False
 
 def primeiro_elem(vetor: list) -> int:
     return v[0]

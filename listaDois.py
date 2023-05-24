@@ -35,7 +35,7 @@ def separa_vetor(vetor1: list) -> None:
                     vetor1[a] = aux
     print(vetor1)
 
-separa_vetor(v1)
+
 
 
 def copia_vetor(vetor1, vetor2: list) -> list:
@@ -49,39 +49,56 @@ def inverte_vetor(vetor1, vetor2: list) -> list:
     print(vetor2)
 
 def ordena_vetor_crescente(vetor1: list) -> list:
-    aux = vetor1[0]
+    aux = 0
     for i in range(len(vetor1)):
-        if vetor1[i] > aux:
-            aux = vetor1[i]
-    return aux
+        for a in range(len(vetor1)):
+            if vetor1[i] < vetor1[a]:
+                aux = vetor1[i]
+                vetor1[i] = vetor1[a]
+                vetor1[a] = aux
+    for i in range(len(vetor1)):
+        print(vetor1[i])
 
 
 def ordena_vetor_decrescente(vetor1: list) -> list:
-    aux = vetor1[0]
+    aux = 0
     for i in range(len(vetor1)):
-        if vetor1[i] < aux:
-            aux = vetor1[i]
-    return aux
+        for a in range(len(vetor1)):
+            if vetor1[i] > vetor1[a]:
+                aux = vetor1[i]
+                vetor1[i] = vetor1[a]
+                vetor1[a] = aux
+    for i in range(len(vetor1)):
+        print(vetor1[i])
 
 
 def ordena_vetor(vetor1: list, forma : str) -> None:
-    while forma not in ['c', 'C', 'd', 'D']:
-        print("Erro!")
-        forma = input("Digite novamente: ")
+
     if forma in ['c', 'C']:
-        aux = vetor1[0]
+        aux = 0
         for i in range(len(vetor1)):
-            if vetor1[i] > aux:
-                aux = vetor1[i]
-        return aux
+            for a in range(len(vetor1)):
+                if vetor1[i] < vetor1[a]:
+                    aux = vetor1[i]
+                    vetor1[i] = vetor1[a]
+                    vetor1[a] = aux
+        for i in range(len(vetor1)):
+            print(vetor1[i])
 
+
+
+    elif forma in ['d', 'D']:
+        aux = 0
+        for i in range(len(vetor1)):
+            for a in range(len(vetor1)):
+                if vetor1[i] > vetor1[a]:
+                    aux = vetor1[i]
+                    vetor1[i] = vetor1[a]
+                    vetor1[a] = aux
+        for i in range(len(vetor1)):
+            print(vetor1[i])
     else:
-        aux = vetor1[0]
-        for i in range(len(vetor1)):
-            if vetor1[i] < aux:
-                aux = vetor1[i]
-        return aux
-
+        print("erro")
 
 
 def conta_acima_media(vetor1: list) -> list:
@@ -104,6 +121,7 @@ def busca_vetor(vetor1: list, n1: int) ->list:
     for i in range(len(vetor1)):
         if n1 == vetor1[i]:
             return True
-        else:
-            return False
+    if n1 != vetor1[i]:
+        return False
 
+print(busca_vetor(v1, 35))
