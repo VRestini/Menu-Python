@@ -23,8 +23,7 @@ acima da média.
 em v, senão retorne False.
 """
 
-v1 = [ 41, 72, 39, 4, 35]
-v2 = [0, 0, 0, 0, 0]
+
 def separa_vetor(vetor1: list) -> None:
     for i in range(0, len(vetor1)):
         if vetor1[i] % 2 == 0:
@@ -39,8 +38,8 @@ def separa_vetor(vetor1: list) -> None:
 
 
 def copia_vetor(vetor1, vetor2: list) -> list:
-    v2 = v1
-    print (v2)
+    vetor2 = vetor1
+    print (vetor2)
 def inverte_vetor(vetor1, vetor2: list) -> list:
     a = -1
     for i in range(len(vetor2)):
@@ -124,4 +123,3 @@ def busca_vetor(vetor1: list, n1: int) ->list:
     if n1 != vetor1[i]:
         return False
 
-print(busca_vetor(v1, 35))
