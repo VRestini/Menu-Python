@@ -1,12 +1,23 @@
 from listaUm import *
 from listaDois import *
-
+"""
 tamanho = int(input("Digite o tamanho:"))
 v = [0] * tamanho
 v2 = [0] * tamanho
 for i in range(len(v)):
     valor = int(input("Digite o valor:"))
     v[i] = valor
+"""
+v = []
+v2 = []
+valor = 1
+while valor != 0:
+    valor = int(input("Digte os valores do vetor: "))
+    v.append(valor)
+
+v.remove(0)
+print(v)
+
 
 resp = 's'
 while resp == 's' or resp == 'S':
@@ -25,31 +36,31 @@ while resp == 's' or resp == 'S':
                 esc = int(input("Escolha o exercício:"))
             else:
                 if esc == 1:
-                    print("Mostrará o primeiro elemento do vetor v", v)
+                    print("Mostrará o primeiro elemento do vetor ", v)
                     print(primeiro_elem(v))
                 elif esc == 2:
-                    print("Mostrará os valores negativos do vetor v", v)
+                    print("Mostrará os valores negativos do vetor ", v)
                     negativo_elem(v)
                 elif esc == 3:
-                    print("Mostrará a soma dos valores do vetor v", v)
+                    print("Mostrará a soma dos valores do vetor ", v)
                     print(soma_elem(v))
                 elif esc == 4:
-                    print("Mostrará a média do vetor v", v)
+                    print("Mostrará a média do vetor ", v)
                     print(media_elem(v))
                 elif esc == 5:
-                    print("Mostrará os valores ímpares do vetor v", v)
+                    print("Mostrará os valores ímpares do vetor ", v)
                     impar_elem(v)
                 elif esc == 6:
-                    print("Mostrará o primeiro e último elemento do vetor v", v)
+                    print("Mostrará o primeiro e último elemento do vetor ", v)
                     prim_ulti_elem(v)
                 elif esc == 7:
-                    print("Mostrará os índices pares do vetor v", v)
+                    print("Mostrará os índices pares do vetor ", v)
                     indice_par_elem(v)
                 elif esc == 8:
-                    print("Mostrará os elemento ordenados do vetor v", v)
+                    print("Mostrará os elemento ordenados do vetor ", v)
                     ordenar(v)
                 else:
-                    print("Mostrará seo número passado como parâmetro existe no vetor v", v)
+                    print("Mostrará se o número passado como parâmetro existe no vetor ", v)
                     n1 = int(input("Digite o valor aser passado como parametro: "))
                     print(exista(v, n1))
                 resp = input("Deseja continuar:")
@@ -63,35 +74,35 @@ while resp == 's' or resp == 'S':
                 esc = int(input("Escolha o exercício:"))
             else:
                 if esc == 1:
-                    print("Copia os elementos dos vetores v1", v)
+                    print("Copia os elementos dos vetores ", v)
                     copia_vetor(v,v2)
                 elif esc == 2:
-                    print("copia os elementos invertidos nos vetores v", v)
+                    print("copia os elementos invertidos nos vetores ", v)
                     inverte_vetor(v, v2)
                 elif esc == 3:
-                    print("Ordena em ordem crescente os elementos do vetor v", v)
+                    print("Ordena em ordem crescente os elementos do vetor ", v)
                     ordena_vetor_crescente(v)
                 elif esc == 4:
-                    print("Ordena em ordem decrescente os elementos do vetor v", v)
+                    print("Ordena em ordem decrescente os elementos do vetor ", v)
                     print(ordena_vetor_decrescente(v))
                 elif esc == 5:
-                    print("Mostrará os valores em ordem do vetor v", v)
+                    print("Mostrará os valores em ordem do vetor ", v)
                     n1 = input("Digite a ordem:")
                     while n1 not in ['c', 'C', 'd', 'D']:
                         print("Erro!")
                         n1 = input("Digite novamente: ")
                     print(ordena_vetor(v, n1))
                 elif esc == 6:
-                    print("Organiza os ímpares na esquerda e os pares na direita do vetor v", v)
+                    print("Organiza os ímpares na esquerda e os pares na direita do vetor ", v)
                     separa_vetor(v)
                 elif esc == 7:
-                    print("retorna quais elementos estam acima da media do vetor v", v)
+                    print("retorna quais elementos estam acima da media do vetor ", v)
                     conta_acima_media(v)
                 elif esc == 8:
                     print("mostra o  maior elemento do vetor v", v)
                     print(maior_elemento(v))
                 else:
-                    print("Mostrará seo número passado como parâmetro existe no vetor v", v)
+                    print("Mostrará se o número passado como parâmetro existe no vetor ", v)
                     n1 = int(input("Digite o valor a ser passado como parametro: "))
                     print(busca_vetor(v, n1))
                 resp = input("Deseja continuar:")
